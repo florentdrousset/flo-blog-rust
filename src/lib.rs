@@ -1,8 +1,9 @@
+use std::net::TcpListener;
+use actix_web::{dev::Server, web, middleware, App, HttpResponse, HttpServer};
+use tera::Tera;
+
 pub mod handlers;
 
-use std::net::TcpListener;
-use actix_web::{dev::Server, web, App, HttpResponse, HttpServer};
-use tera::Tera;
 
 #[macro_use]
 extern crate lazy_static;

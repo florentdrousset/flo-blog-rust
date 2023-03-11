@@ -1,6 +1,8 @@
+mod handlers;
+
 use std::net::TcpListener;
 
-use awesome_blog::start;
+use awesome_blog::start_blog;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
