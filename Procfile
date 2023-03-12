@@ -1,1 +1,1 @@
-web: ./target/release/flo-blog-rust
+web: ./target/release/awesome-blog
