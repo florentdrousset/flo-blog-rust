@@ -1,7 +1,25 @@
 version: 2.1
 orbs:
   heroku: circleci/heroku@0.0.10
+
+jobs:
+  build_frontend:
+    docker:
+      - image: circleci/node:14
+    working_directory: ~/app
+    steps:
+      - checkout
+      - run:
+          name: Build front-end
+          command: |
+            cd tailwind
+            npm run build-css-prod
+            cd ..
+
 workflows:
   heroku_deploy:
     jobs:
-      - heroku/deploy-via-git
+      - build_frontend
+      - heroku/deploy-via-git:
+          requires:
+            - build_frontend
