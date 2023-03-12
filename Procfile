@@ -1,1 +1,1 @@
-web: ROCKET_PORT=$PORT ./target/release/blog-flo-rust
+web: ./target/release/flo-blog-rust
